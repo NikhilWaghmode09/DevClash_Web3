@@ -40,9 +40,12 @@ const Navbar = () => {
               <li className='nav-item'>
                 <Link to = "/stores" className='nav-link'>games</Link>
               </li>
+              <li className='nav-item'>
+                <Link to = "/" className='nav-link'>Donations</Link>
+              </li>
 
             </ul>
-            <Col span={12} style={{ textAlign: "right", paddingRight: "200px" }}>
+            <Col span={12} style={{ textAlign: "right", paddingLeft: "420px" }}>
               <WalletSelector />
             </Col>
 

@@ -1,11 +1,22 @@
 import styled from 'styled-components';
+import React, { useState } from 'react';
+import GuessingGame from './GuessingGame';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { sliderImages } from '../../utils/images';
 
 const ImageSlider = () => {
-  // reference link for settings: https://kenwheeler.github.io/slick/
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openGameModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeGameModal = () => {
+    setIsModalOpen(false);
+  };
+
   const settings = {
     className: "center",
     arrows: true,
@@ -43,20 +54,34 @@ const ImageSlider = () => {
 
   return (
     <ImageSliderWrapper className='section'>
-      <Slider { ...settings } className='game-slider'>
-        {
-          sliderImages.map((image, idx) => (
-            <div className='slider-item img-fit-cover' key = { idx }>
-              <img src = { image } className='slider-item-img' />
-            </div>
-          ))
-        }
+      <Slider {...settings} className='game-slider'>
+        {sliderImages.map((image, idx) => (
+          <div className='slider-item img-fit-cover' key={idx} onClick={openGameModal}>
+            <img src={image} className='slider-item-img' alt={`Slider ${idx}`} />
+          </div>
+        ))}
       </Slider>
+
+      {isModalOpen && (
+        <GameModal>
+          <GuessingGame closeModal={closeGameModal} />
+        </GameModal>
+      )}
     </ImageSliderWrapper>
   )
 }
 
-export default ImageSlider;
+const GameModal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const ImageSliderWrapper = styled.div`
   background-color: #050415;
@@ -116,3 +141,4 @@ const ImageSliderWrapper = styled.div`
     }
   }
 `;
+export default ImageSlider;

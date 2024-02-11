@@ -11,17 +11,14 @@ const Banner = () => {
     >
       <div className="banner-content w-100 container text-white">
         <div className="banner-badge text-uppercase">
-          Risk it for a biscuit !
+          
         </div>
-        <h1 className="banner-title text-uppercase">Time to try your luck </h1>
+        <h1 className="banner-title text-uppercase">Risk it for the biscuit!</h1>
         <p className="lead-text">
-          Live gaming with lots of other games. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation.
+          Enjoy single player and multi player games online. It's a thriving community where gamers can interact, share tips and tricks, and forge lasting friendships. Join discussions in our forums, participate in tournaments and events, or simply hang out and chat with fellow gamers who share your passion.
         </p>
         <button type="button" className="banner-btn d-flex align-items-center">
-          <span className="btn-text text-green">play now</span>
+          <span className="btn-text text-green"> play now</span>
         </button>
       </div>
     </BannerWrapper>
@@ -86,5 +83,8 @@ const BannerWrapper = styled.div`
     .banner-title {
       font-size: 56px;
     }
+  }
+  .btn-text{
+    text-align:center;
   }
 `;

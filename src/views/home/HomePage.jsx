@@ -62,7 +62,7 @@ const HomePage = () => {
       <section className="section sc-popular">
         <div className="container">
           <Title
-            titleName={{ firstText: "Enjoy the TOP games built using ", secondText: "Altos Move" }}
+            titleName={{ firstText: "Enjoy the TOP games built using ", secondText: "Aptos and Move" }}
           />
         </div>
       </section>
